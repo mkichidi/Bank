@@ -214,10 +214,10 @@ namespace Bank
              FindAndReplace(wordApp, "@@MobileNo", TxtApplicantMobileNo.Text);
              FindAndReplace(wordApp, "@@Type", TxtAccountType.Text);
 
-             FindAndReplace(wordApp, "@@Amount", String.Format(new CultureInfo("en-IN", false), "{0:n0}", Convert.ToDouble(Convert.ToInt32(TxtAmount.Text))) + "/-");
-             FindAndReplace(wordApp, "@@TotalAmount", String.Format(new CultureInfo("en-IN", false), "{0:n0}", Convert.ToDouble(Convert.ToInt32(TxtAmount.Text) + Convert.ToInt32(TxtCommision.Text))) + "/-");
+             FindAndReplace(wordApp, "@@Amount", String.Format(new CultureInfo("en-IN", false), "{0:n2}", Convert.ToDouble(TxtAmount.Text)) + "/-");
+             FindAndReplace(wordApp, "@@TotalAmount", String.Format(new CultureInfo("en-IN", false), "{0:n0}", Convert.ToInt32(Convert.ToDouble(TxtAmount.Text)+ Convert.ToDouble(TxtCommision.Text))) + "/-");
              FindAndReplace(wordApp, "@@Commission", TxtCommision.Text + "/-");
-             FindAndReplace(wordApp, "@@InWords ", JswDatatable.ConvertNumbertoWords(Convert.ToInt32(TxtAmount.Text) + Convert.ToInt32(TxtCommision.Text)));
+             FindAndReplace(wordApp, "@@InWords ", JswDatatable.ConvertNumbertoWords(Convert.ToInt32( Convert.ToDouble(TxtAmount.Text) + Convert.ToDouble(TxtCommision.Text))));
 
          }
          DialogResult ans = MessageBox.Show("File Downloaded at " + filename + Environment.NewLine + "Do you want to open?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -282,10 +282,10 @@ namespace Bank
             }
         }
 
-        private string upto10000 = "3";
-        private string tenThousndtolakh= "6";
-        private string lakhto2Lakh = "18";
-        private string twolakhto5Lakh = "30";
+        private string upto10000 = "2.95";
+        private string tenThousndtolakh= "5.90";
+        private string lakhto2Lakh = "17.70";
+        private string twolakhto5Lakh = "29.50";
         private string fivelakhabove = "59";
 
         private void DdlGroup_SelectedIndexChanged(object sender, EventArgs e)

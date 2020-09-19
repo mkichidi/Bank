@@ -69,6 +69,7 @@ namespace Bank
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.DdlApplicant = new AutoCompleteComboBox.SuggestComboBox();
             this.DdlBeneficiary = new AutoCompleteComboBox.SuggestComboBox();
+            this.DdlGroup = new AutoCompleteComboBox.SuggestComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -419,7 +420,8 @@ namespace Bank
             this.DdlApplicant.Size = new System.Drawing.Size(172, 21);
             this.DdlApplicant.SuggestBoxHeight = 96;
             this.DdlApplicant.SuggestListOrderRule = null;
-            this.DdlApplicant.TabIndex = 184;
+            this.DdlApplicant.TabIndex = 192;
+            this.DdlApplicant.SelectedIndexChanged += new System.EventHandler(this.DdlApplicant_SelectedIndexChanged);
             // 
             // DdlBeneficiary
             // 
@@ -427,19 +429,33 @@ namespace Bank
             this.DdlBeneficiary.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.DdlBeneficiary.FilterRule = null;
             this.DdlBeneficiary.FormattingEnabled = true;
-            this.DdlBeneficiary.Location = new System.Drawing.Point(516, 87);
+            this.DdlBeneficiary.Location = new System.Drawing.Point(516, 86);
             this.DdlBeneficiary.Name = "DdlBeneficiary";
             this.DdlBeneficiary.PropertySelector = null;
             this.DdlBeneficiary.Size = new System.Drawing.Size(172, 21);
             this.DdlBeneficiary.SuggestBoxHeight = 96;
             this.DdlBeneficiary.SuggestListOrderRule = null;
-            this.DdlBeneficiary.TabIndex = 186;
+            this.DdlBeneficiary.TabIndex = 197;
+            this.DdlBeneficiary.SelectedIndexChanged += new System.EventHandler(this.DdlBeneficiary_SelectedIndexChanged);
+            // 
+            // DdlGroup
+            // 
+            this.DdlGroup.FilterRule = null;
+            this.DdlGroup.FormattingEnabled = true;
+            this.DdlGroup.Location = new System.Drawing.Point(168, 376);
+            this.DdlGroup.Name = "DdlGroup";
+            this.DdlGroup.PropertySelector = null;
+            this.DdlGroup.Size = new System.Drawing.Size(172, 21);
+            this.DdlGroup.SuggestBoxHeight = 96;
+            this.DdlGroup.SuggestListOrderRule = null;
+            this.DdlGroup.TabIndex = 198;
             // 
             // RTGSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 478);
+            this.Controls.Add(this.DdlGroup);
             this.Controls.Add(this.DdlBeneficiary);
             this.Controls.Add(this.DdlApplicant);
             this.Controls.Add(this.label16);
@@ -524,5 +540,6 @@ namespace Bank
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private SuggestComboBox DdlApplicant;
         private SuggestComboBox DdlBeneficiary;
+        private SuggestComboBox DdlGroup;
     }
 }
